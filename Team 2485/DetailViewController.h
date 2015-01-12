@@ -11,7 +11,7 @@
 @interface DetailViewController : UIViewController
 
 @property (strong, nonatomic) id detailItem;
-@property (weak, nonatomic) IBOutlet UILabel *detailDescriptionLabel;
+@property (weak, nonatomic) IBOutlet UINavigationItem *navBar;//Displays "twitter feed", or "Media"
 
 @end
 
