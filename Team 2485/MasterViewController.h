@@ -13,7 +13,9 @@
 @interface MasterViewController : UITableViewController
 
 @property (strong, nonatomic) DetailViewController *detailViewController;
-
+@property (strong, nonatomic) NSArray *events;
+@property (strong, nonatomic) IBOutlet UINavigationItem *navBar;//Displays "twitter feed", or "Media"
++(UILabel *)createLabelWithName: (NSString *) name big:(BOOL) big;
 
 @end
 

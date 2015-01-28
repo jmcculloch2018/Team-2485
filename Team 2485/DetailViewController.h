@@ -7,11 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "UpcomingEventsViewController.h"
+@interface DetailViewController : UIViewController 
 
-@interface DetailViewController : UIViewController
-
-@property (strong, nonatomic) id detailItem;
-@property (weak, nonatomic) IBOutlet UINavigationItem *navBar;//Displays "twitter feed", or "Media"
-
+@property (strong, nonatomic) NSString *detailItem;
+@property (strong, nonatomic) IBOutlet UINavigationItem *navBar;//Displays "twitter feed", or "Media"
+@property (strong, nonatomic) IBOutlet UIViewController *uevc;
+@property (strong, nonatomic) UIViewController *parent;
 @end
-

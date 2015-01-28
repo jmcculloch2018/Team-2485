@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>77C47AA7-49B6-4E38-9A1E-040E0C466DBB</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Team 2485</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>62CB2ECA2DAAC4D92F65E8544B65FEA6848CE35F</key>
+		<string>https://github.com/jmcculloch2018/Team-2485.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Team 2485.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>62CB2ECA2DAAC4D92F65E8544B65FEA6848CE35F</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/jmcculloch2018/Team-2485.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>62CB2ECA2DAAC4D92F65E8544B65FEA6848CE35F</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>62CB2ECA2DAAC4D92F65E8544B65FEA6848CE35F</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Team-2485</string>
+		</dict>
+	</array>
+</dict>
+</plist>

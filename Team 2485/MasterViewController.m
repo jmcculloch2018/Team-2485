@@ -8,6 +8,7 @@
 
 #import "MasterViewController.h"
 #import "DetailViewController.h"
+#import "UpcomingEventsHandler.h"
 
 @interface MasterViewController ()
 
@@ -29,22 +30,39 @@
     // Do any additional setup after loading the view, typically from a nib.
     
     self.detailViewController = (DetailViewController *)[[self.splitViewController.viewControllers lastObject] topViewController];
-    self.objects = [NSMutableArray arrayWithObjects:@"Twitter Feed", @"Upcoming Events", @"Media", @"Rankings", @"Tutorials", @"Resources" , nil] ;
+    self.objects = [NSMutableArray arrayWithObjects:@"Twitter Feed", @"Upcoming Events", @"Media", @"Rankings", @"Tutorials", @"Resources", @"Team 2485 Sign-In", nil] ;
+    self.events = [[UpcomingEventsHandler downloadEvents] copy];
+    self.navigationController.navigationBar.barTintColor = [UIColor blackColor];
+    self.tableView.backgroundColor = [UIColor blackColor];
+    self.tableView.sectionIndexColor = [UIColor blackColor];
+    self.tableView.sectionIndexBackgroundColor = [UIColor blackColor];
+    self.tableView.sectionIndexTrackingBackgroundColor = [UIColor blackColor];
+    [self.navigationItem setTitleView:[MasterViewController createLabelWithName: @"Main Menu" big:YES]];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
++(UILabel *)createLabelWithName: (NSString *) name big:(BOOL) big{
+    UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 320, 30)];
+    titleLabel.textColor = [UIColor yellowColor];
+    titleLabel.backgroundColor = [UIColor clearColor];
+    titleLabel.text = [NSString stringWithString:name];
+    titleLabel.textAlignment = NSTextAlignmentCenter;
+    titleLabel.font = [UIFont systemFontOfSize:big ? 30:20];
+    return titleLabel;
+}
 #pragma mark - Segues
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([[segue identifier] isEqualToString:@"showDetail"]) {
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-        NSDate *object = self.objects[indexPath.row];
+        NSString *object = self.objects[indexPath.row];
         DetailViewController *controller = (DetailViewController *)[[segue destinationViewController] topViewController];
+        controller.parent=self;
         [controller setDetailItem:object];
+        controller.navBar.title=[object description];
         controller.navigationItem.leftBarButtonItem = self.splitViewController.displayModeButtonItem;
         controller.navigationItem.leftItemsSupplementBackButton = YES;
     }
@@ -62,7 +80,13 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
-
+    if (indexPath.row%2==1) {
+        cell.backgroundColor=[UIColor blackColor];
+        cell.textLabel.textColor=[UIColor yellowColor];
+    } else {
+        cell.backgroundColor=[UIColor yellowColor];
+        cell.textLabel.textColor=[UIColor blackColor];
+    }
     NSDate *object = self.objects[indexPath.row];
     cell.textLabel.text = [object description];
     return cell;
@@ -70,7 +94,7 @@
 
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
     // Return NO if you do not want the specified item to be editable.
-    return YES;
+    return NO;
 }
 
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {

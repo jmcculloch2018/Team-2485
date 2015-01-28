@@ -16,8 +16,10 @@
 		2929F8111A63931D00901483 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2929F80F1A63931D00901483 /* LaunchScreen.xib */; };
 		2929F81D1A63931D00901483 /* Team_2485Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2929F81C1A63931D00901483 /* Team_2485Tests.m */; };
 		29340B591A6398C0004CCDFB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29340B581A6398C0004CCDFB /* UIKit.framework */; };
-		29340B5F1A639F16004CCDFB /* StoryboardSegueOpen.m in Sources */ = {isa = PBXBuildFile; fileRef = 29340B5E1A639F16004CCDFB /* StoryboardSegueOpen.m */; };
-		29340B621A63A06E004CCDFB /* CIDoorwaySegue.m in Sources */ = {isa = PBXBuildFile; fileRef = 29340B611A63A06E004CCDFB /* CIDoorwaySegue.m */; };
+		3B4B0A821A72F6AD0091E972 /* UpcomingEventsHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B4B0A811A72F6AD0091E972 /* UpcomingEventsHandler.m */; };
+		3B4B0A961A72FD020091E972 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B4B0A951A72FD020091E972 /* libxml2.dylib */; };
+		3B4B0A991A73103A0091E972 /* Event.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B4B0A981A73103A0091E972 /* Event.m */; };
+		3B4B0AA51A735E8D0091E972 /* UpcomingEventsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B4B0AA41A735E8D0091E972 /* UpcomingEventsViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,10 +50,13 @@
 		2929F81C1A63931D00901483 /* Team_2485Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Team_2485Tests.m; sourceTree = "<group>"; };
 		29340B581A6398C0004CCDFB /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		29340B5A1A639942004CCDFB /* Team 2485-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Team 2485-Bridging-Header.h"; sourceTree = "<group>"; };
-		29340B5D1A639F16004CCDFB /* StoryboardSegueOpen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StoryboardSegueOpen.h; sourceTree = "<group>"; };
-		29340B5E1A639F16004CCDFB /* StoryboardSegueOpen.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StoryboardSegueOpen.m; sourceTree = "<group>"; };
-		29340B601A63A06E004CCDFB /* CIDoorwaySegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CIDoorwaySegue.h; sourceTree = "<group>"; };
-		29340B611A63A06E004CCDFB /* CIDoorwaySegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CIDoorwaySegue.m; sourceTree = "<group>"; };
+		3B4B0A801A72F6AD0091E972 /* UpcomingEventsHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UpcomingEventsHandler.h; path = "Team 2485/UpcomingEventsHandler.h"; sourceTree = "<group>"; };
+		3B4B0A811A72F6AD0091E972 /* UpcomingEventsHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UpcomingEventsHandler.m; path = "Team 2485/UpcomingEventsHandler.m"; sourceTree = "<group>"; };
+		3B4B0A951A72FD020091E972 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
+		3B4B0A971A73103A0091E972 /* Event.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Event.h; sourceTree = "<group>"; };
+		3B4B0A981A73103A0091E972 /* Event.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Event.m; sourceTree = "<group>"; };
+		3B4B0AA31A735E8D0091E972 /* UpcomingEventsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UpcomingEventsViewController.h; sourceTree = "<group>"; };
+		3B4B0AA41A735E8D0091E972 /* UpcomingEventsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UpcomingEventsViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +64,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3B4B0A961A72FD020091E972 /* libxml2.dylib in Frameworks */,
 				29340B591A6398C0004CCDFB /* UIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -76,8 +82,7 @@
 		2929F7F11A63931C00901483 = {
 			isa = PBXGroup;
 			children = (
-				29340B5D1A639F16004CCDFB /* StoryboardSegueOpen.h */,
-				29340B5E1A639F16004CCDFB /* StoryboardSegueOpen.m */,
+				3B4B0A951A72FD020091E972 /* libxml2.dylib */,
 				29340B581A6398C0004CCDFB /* UIKit.framework */,
 				2929F7FC1A63931C00901483 /* Team 2485 */,
 				2929F8191A63931D00901483 /* Team 2485Tests */,
@@ -97,10 +102,9 @@
 		2929F7FC1A63931C00901483 /* Team 2485 */ = {
 			isa = PBXGroup;
 			children = (
+				3B4B0A891A72F7DE0091E972 /* Upcoming Events */,
 				2929F8011A63931C00901483 /* AppDelegate.h */,
 				2929F8021A63931C00901483 /* AppDelegate.m */,
-				29340B601A63A06E004CCDFB /* CIDoorwaySegue.h */,
-				29340B611A63A06E004CCDFB /* CIDoorwaySegue.m */,
 				2929F8041A63931C00901483 /* MasterViewController.h */,
 				2929F8051A63931C00901483 /* MasterViewController.m */,
 				2929F8071A63931C00901483 /* DetailViewController.h */,
@@ -138,6 +142,20 @@
 				2929F81B1A63931D00901483 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		3B4B0A891A72F7DE0091E972 /* Upcoming Events */ = {
+			isa = PBXGroup;
+			children = (
+				3B4B0A801A72F6AD0091E972 /* UpcomingEventsHandler.h */,
+				3B4B0A811A72F6AD0091E972 /* UpcomingEventsHandler.m */,
+				3B4B0A971A73103A0091E972 /* Event.h */,
+				3B4B0A981A73103A0091E972 /* Event.m */,
+				3B4B0AA31A735E8D0091E972 /* UpcomingEventsViewController.h */,
+				3B4B0AA41A735E8D0091E972 /* UpcomingEventsViewController.m */,
+			);
+			name = "Upcoming Events";
+			path = ..;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -189,6 +207,7 @@
 				TargetAttributes = {
 					2929F7F91A63931C00901483 = {
 						CreatedOnToolsVersion = 6.1.1;
+						DevelopmentTeam = 5YZSSM65UE;
 					};
 					2929F8151A63931D00901483 = {
 						CreatedOnToolsVersion = 6.1.1;
@@ -241,11 +260,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				2929F8031A63931C00901483 /* AppDelegate.m in Sources */,
-				29340B5F1A639F16004CCDFB /* StoryboardSegueOpen.m in Sources */,
+				3B4B0A821A72F6AD0091E972 /* UpcomingEventsHandler.m in Sources */,
 				2929F8061A63931C00901483 /* MasterViewController.m in Sources */,
 				2929F8001A63931C00901483 /* main.m in Sources */,
+				3B4B0AA51A735E8D0091E972 /* UpcomingEventsViewController.m in Sources */,
 				2929F8091A63931C00901483 /* DetailViewController.m in Sources */,
-				29340B621A63A06E004CCDFB /* CIDoorwaySegue.m in Sources */,
+				3B4B0A991A73103A0091E972 /* Event.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -370,6 +390,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				HEADER_SEARCH_PATHS = "$(SDKROOT)/usr/include/libxml2";
 				INFOPLIST_FILE = "Team 2485/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -384,6 +405,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				HEADER_SEARCH_PATHS = "$(SDKROOT)/usr/include/libxml2";
 				INFOPLIST_FILE = "Team 2485/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
