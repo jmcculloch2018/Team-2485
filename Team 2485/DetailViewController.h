@@ -6,12 +6,15 @@
 //  Copyright (c) 2015 Jeremy McCulloch. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
-#import "UpcomingEventsViewController.h"
-@interface DetailViewController : UIViewController 
+#import "Constants.h"
+#import "Team.h"
+@interface DetailViewController : UIViewController <UISearchDisplayDelegate, UISearchBarDelegate>
 
-@property (strong, nonatomic) NSString *detailItem;
+@property (strong, nonatomic) id detailItem;
 @property (strong, nonatomic) IBOutlet UINavigationItem *navBar;//Displays "twitter feed", or "Media"
 @property (strong, nonatomic) IBOutlet UIViewController *uevc;
 @property (strong, nonatomic) UIViewController *parent;
+@property (strong, nonatomic) UITextField *tf;
+@property Team *theTeam;
+
 @end

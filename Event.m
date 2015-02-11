@@ -9,5 +9,7 @@
 #import "Event.h"
 
 @implementation Event
-
+-(NSString *)description {
+    return self.name;
+}
 @end

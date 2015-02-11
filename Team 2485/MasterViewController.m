@@ -7,16 +7,11 @@
 //
 
 #import "MasterViewController.h"
-#import "DetailViewController.h"
-#import "UpcomingEventsHandler.h"
-
 @interface MasterViewController ()
-
-@property NSMutableArray *objects;
+@property BOOL hasTestedInterwebs;
 @end
 
 @implementation MasterViewController
-
 - (void)awakeFromNib {
     [super awakeFromNib];
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
@@ -24,33 +19,48 @@
         self.preferredContentSize = CGSizeMake(320.0, 600.0);
     }
 }
-
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    self.detailViewController = (DetailViewController *)
+    [[self.splitViewController.viewControllers lastObject] topViewController];
+    self.objects = [NSMutableArray arrayWithObjects: @"Twitter", @"Events", @"Media", @"Rankings", @"Tutorials", @"Resources", @"Team 2485 Sign-In", nil] ;
     
-    self.detailViewController = (DetailViewController *)[[self.splitViewController.viewControllers lastObject] topViewController];
-    self.objects = [NSMutableArray arrayWithObjects:@"Twitter Feed", @"Upcoming Events", @"Media", @"Rankings", @"Tutorials", @"Resources", @"Team 2485 Sign-In", nil] ;
-    self.events = [[UpcomingEventsHandler downloadEvents] copy];
-    self.navigationController.navigationBar.barTintColor = [UIColor blackColor];
+    
+    self.navigationController.navigationBar.barTintColor = [Constants gold2];
+    
     self.tableView.backgroundColor = [UIColor blackColor];
-    self.tableView.sectionIndexColor = [UIColor blackColor];
-    self.tableView.sectionIndexBackgroundColor = [UIColor blackColor];
-    self.tableView.sectionIndexTrackingBackgroundColor = [UIColor blackColor];
+    self.tableView.sectionIndexColor = [Constants gold];
+    self.tableView.sectionIndexBackgroundColor = [Constants gold];
+    self.tableView.sectionIndexTrackingBackgroundColor = [Constants gold];
+    self.tableView.separatorColor = [UIColor blackColor];
     [self.navigationItem setTitleView:[MasterViewController createLabelWithName: @"Main Menu" big:YES]];
-}
+    NSString *URLString = [NSString stringWithContentsOfURL:[NSURL URLWithString:@"http://www.google.com"]];
 
+    if (URLString!=NULL) {
+        NSLog(@"a");
+        _tweets = [TwitterFeedHandler downloadTweets];
+        NSLog(@"a");
+        self.events = [UpcomingEventsHandler downloadEvents] ;
+        NSLog(@"a");
+        self.tuts = [[TutorialHandler downloadEvents] copy];
+        NSLog(@"a");
+        self.teams = [RankingsHandler downloadTopTeams];
+        NSLog(@"a");
+        self.regs = [RankingsHandler downloadRegs];
+    }
+    
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 +(UILabel *)createLabelWithName: (NSString *) name big:(BOOL) big{
     UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 320, 30)];
-    titleLabel.textColor = [UIColor yellowColor];
+    titleLabel.textColor = [UIColor blackColor];;
     titleLabel.backgroundColor = [UIColor clearColor];
     titleLabel.text = [NSString stringWithString:name];
     titleLabel.textAlignment = NSTextAlignmentCenter;
-    titleLabel.font = [UIFont systemFontOfSize:big ? 30:20];
+    titleLabel.font = [UIFont fontWithName:@"BoomBox 2" size:big? 30:20];
     return titleLabel;
 }
 #pragma mark - Segues
@@ -77,16 +87,17 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return self.objects.count;
 }
-
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
     if (indexPath.row%2==1) {
-        cell.backgroundColor=[UIColor blackColor];
-        cell.textLabel.textColor=[UIColor yellowColor];
+        cell.backgroundColor=[Constants gold];
+        cell.textLabel.textColor = [UIColor blackColor];;
     } else {
-        cell.backgroundColor=[UIColor yellowColor];
-        cell.textLabel.textColor=[UIColor blackColor];
+        cell.backgroundColor = [UIColor blackColor];;
+        cell.textLabel.textColor=[Constants gold];
     }
+    cell.font = [UIFont fontWithName:@"Copperplate" size:24];
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     NSDate *object = self.objects[indexPath.row];
     cell.textLabel.text = [object description];
     return cell;

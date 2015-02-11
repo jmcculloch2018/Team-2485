@@ -6,9 +6,8 @@
 //  Copyright (c) 2015 Jeremy McCulloch. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "UpcomingEventsViewController.h"
 #import "Event.h"
-#import "DetailViewController.h"
 @interface UpcomingEventsViewController : UIViewController {
     
 }

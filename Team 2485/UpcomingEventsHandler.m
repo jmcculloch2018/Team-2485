@@ -7,7 +7,7 @@
 //
 
 #import "UpcomingEventsHandler.h"
-#import "Event.h"
+
 @implementation UpcomingEventsHandler
 
 +(NSArray *)downloadEvents {
@@ -31,16 +31,16 @@
     
         if ([eventData count]>1) {
             Event *ev = [[Event alloc] init];
+            
             ev.name = [eventData objectAtIndex:0];
             ev.formattedDate = [eventData objectAtIndex:1];
             ev.location=@"";
             if ([eventData count]>2)
                 ev.location = [eventData objectAtIndex:2];
+            
             [events addObject:ev];
-            NSLog(@"%i", [events count]);
         }
     }
-    NSLog(@"%i", [events count]);
     return [events copy];
 }
 @end

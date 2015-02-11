@@ -1,0 +1,41 @@
+//
+//  PrefixHeader.pch
+//  Team 2485
+//
+//  Created by Deidre MacKenna on 2/6/15.
+//  Copyright (c) 2015 Jeremy McCulloch. All rights reserved.
+//
+#import <Availability.h>
+
+#ifndef __IPHONE_5_0
+#warning "This project uses features only available in iOS SDK 5.0 and later."
+#endif
+
+#ifdef __OBJC__
+#import "MasterViewController.h"
+#import "DetailViewController.h"
+//Upcoming Events
+#import "UpcomingEventsHandler.h"
+#import "UpcomingEventsViewController.h"
+#import "Event.h"
+//Twitter
+#import "TwitterFeedHandler.h"
+#import "TwitterFeedViewController.h"
+#import "STTwitter.h"
+//Rankings
+#import "Regional.h"
+#import "Team.h"
+#import "RankingsHandler.h"
+#import "ListOfMatches.h"
+#import "Match.h"
+#import "RegionalInfoViewController.h"
+#import "TeamInfoViewController.h"
+#import "MatchInfoViewController.h"
+//Tutorials
+#import "TutorialHandler.h"
+#import "TutorialViewController.h"
+#import "Tutorial.h"
+//Sign-in
+#import "MasterTeamViewController.h"
+
+#endif
