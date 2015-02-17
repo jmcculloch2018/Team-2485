@@ -12,5 +12,5 @@
 @property (nonatomic, copy) NSString *title;
 @property (nonatomic, copy) NSString *url;
 
-+(NSArray *)downloadEvents;
++(NSArray *)downloadTuts;
 @end

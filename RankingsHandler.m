@@ -165,15 +165,16 @@
     NSArray *splitEvents=[shortenedData componentsSeparatedByString:@";"];
     
     for (NSString *eventStr in splitEvents) {
-        NSArray *eventData = [eventStr componentsSeparatedByString:@","];
+        NSArray *eventData = [eventStr componentsSeparatedByString:@"$"];
         
         if ([eventData count]>2) {
             Team *t = [[Team alloc] init];
             
             t.number = ((NSString*) eventData[0]).intValue;
             t.name = eventData[1];
-            t.rookie = ((NSString*) eventData[2]).intValue;
-            t.url = eventData[2];
+            t.location = eventData[2];
+            t.rookie = ((NSString*) eventData[3]).intValue;
+            t.url = eventData[4];
             
             [teams addObject:t];
             

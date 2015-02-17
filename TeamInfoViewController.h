@@ -10,6 +10,6 @@
 
 @interface TeamInfoViewController : UIViewController
 @property (strong, nonatomic)UIViewController *parent;
-+(TeamInfoViewController *)newWithTeam: (Team *)timmy;
+-(void)initWithTeam: (Team *) timmy;
 
 @end

@@ -41,4 +41,14 @@ static NSMutableArray *matches;
 
     return events;
 }
++(NSString *)getUrlFromString: (NSString *)str {
+    NSRange r1 = [str rangeOfString:@"http"];
+    NSString *temp = [str substringFromIndex:r1.location];
+    @try {
+        NSRange r2 = [temp rangeOfString: @" "];
+        temp = [temp substringToIndex: r2.location];
+    }  @catch (NSException *exception) {}
+    
+    return temp;
+}
 @end

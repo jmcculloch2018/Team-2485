@@ -12,6 +12,11 @@
 #endif
 
 #ifdef __OBJC__
+
+//iPad support
+#define widthMultiplier(s) s.view.frame.size.width/320.0
+#define heightMultiplier(s) s.view.frame.size.height/480.0
+//Main Menu
 #import "MasterViewController.h"
 #import "DetailViewController.h"
 //Upcoming Events
@@ -36,6 +41,9 @@
 #import "TutorialViewController.h"
 #import "Tutorial.h"
 //Sign-in
-#import "MasterTeamViewController.h"
+#import "User.h"
+#import "SignInViewController.h"
+
+
 
 #endif

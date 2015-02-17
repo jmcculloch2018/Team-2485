@@ -11,6 +11,6 @@
 @interface MatchInfoViewController : UIViewController
 @property (strong, nonatomic)UIViewController *parent;
 
-+(MatchInfoViewController *)newWithMatch: (Match *) m;
+-(void)initWithMatch: (Match *)mDawg;
 
 @end

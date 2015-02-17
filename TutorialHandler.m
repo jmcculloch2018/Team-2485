@@ -9,7 +9,7 @@
 #import "TutorialHandler.h"
 
 @implementation TutorialHandler
-+(NSArray *)downloadEvents {
++(NSArray *)downloadTuts {
     NSMutableArray * tuts = [NSMutableArray array]
     ;
     

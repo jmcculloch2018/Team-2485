@@ -9,18 +9,29 @@
 #import "Constants.h"
 @implementation Constants
 +(UIColor *) gold {
-    return [UIColor colorWithRed:255/255.0 green:181/255.0 blue:45/255.0 alpha:1.0];
+    return [UIColor colorWithRed:227/255.0 green:191/255.0 blue:34/255.0 alpha:1.0];
 }
 +(NSString *) password {
-    return  @"W";
+    return  @"warlords2485valkyrie";
 }
-+(UIColor *) gold2 {
-    return [UIColor colorWithRed:255/255.0 green:0.9*215/255.0 blue:0.9*10/255.0 alpha:1.0];
++(UIColor *) systemBlue {
+    return [[[[UIApplication sharedApplication] delegate] window] tintColor];
 }
 +(int) year {
     return 2014;
 }
 +(NSString *)twitterAccount {
     return @"FRCTeams";
+}
++(NSString *)about {
+    return @"We are Team 2485, the W.A.R. (We Are Robot) Lords, a FIRST robotics team! Our team is from Francis Parker School in San Diego, CA. As part of our FIRST involvement, we are dedicated to spreading our message throughout San Diego. We are always looking for opportunities to help out our community and hope to get even more involved in the coming years.";
+}
++(UIFont *)body: (int) size  {
+    return [UIFont fontWithName:@"Ubuntu" size:size];
+
+}
++(UIFont *)title: (int) size {
+    return [UIFont fontWithName:@"BoomBox 2" size:size];
+
 }
 @end

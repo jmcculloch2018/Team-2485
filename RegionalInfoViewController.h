@@ -10,5 +10,5 @@
 
 @interface RegionalInfoViewController : UIViewController
 @property (strong, nonatomic)UIViewController *parent;
-+(RegionalInfoViewController *)newWithRegional: (Regional *)reggy;
+-(void)initWithRegional: (Regional *)reggy;
 @end

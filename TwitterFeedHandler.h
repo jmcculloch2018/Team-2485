@@ -13,5 +13,5 @@
 }
 
 +(NSArray *)downloadTweets;
-
++(NSString *)getUrlFromString: (NSString *)str;
 @end

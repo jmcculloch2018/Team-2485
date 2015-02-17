@@ -18,4 +18,5 @@
 +(NSString *)convertToReadable: (Match *)m ;
 +(NSString *)listAlliances: (Match *)m ;
 +(ListOfMatches *) downloadMatchesForTeam: (Team *)theTeam regional: (Regional *) reg ;
++(NSString *)searchString: (NSString *)str from: (NSString *)start to: (NSString *) end;
 @end

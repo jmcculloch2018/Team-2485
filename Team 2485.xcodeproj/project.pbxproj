@@ -13,11 +13,9 @@
 		2929F8091A63931C00901483 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2929F8081A63931C00901483 /* DetailViewController.m */; };
 		2929F80C1A63931D00901483 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2929F80A1A63931D00901483 /* Main.storyboard */; };
 		2929F80E1A63931D00901483 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2929F80D1A63931D00901483 /* Images.xcassets */; };
-		2929F8111A63931D00901483 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2929F80F1A63931D00901483 /* LaunchScreen.xib */; };
 		2929F81D1A63931D00901483 /* Team_2485Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2929F81C1A63931D00901483 /* Team_2485Tests.m */; };
 		29340B591A6398C0004CCDFB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29340B581A6398C0004CCDFB /* UIKit.framework */; };
 		3B2196971A85469A0010C5E1 /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B2196961A85469A0010C5E1 /* Constants.m */; };
-		3B2196991A854B7A0010C5E1 /* WarlordsLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B2196981A854B7A0010C5E1 /* WarlordsLogo.png */; };
 		3B21969C1A85699B0010C5E1 /* Match.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B21969B1A85699B0010C5E1 /* Match.m */; };
 		3B21969F1A856B970010C5E1 /* Regional.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B21969E1A856B970010C5E1 /* Regional.m */; };
 		3B2196A21A856D190010C5E1 /* Team.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B2196A11A856D190010C5E1 /* Team.m */; };
@@ -26,12 +24,10 @@
 		3B4B0A991A73103A0091E972 /* Event.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B4B0A981A73103A0091E972 /* Event.m */; };
 		3B4B0AA51A735E8D0091E972 /* UpcomingEventsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B4B0AA41A735E8D0091E972 /* UpcomingEventsViewController.m */; };
 		3B54FB611A85DADA001B4DDB /* boombox2.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3B54FB601A85DADA001B4DDB /* boombox2.ttf */; };
-		3B54FB651A85DFCE001B4DDB /* UbuntuTitle.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3B54FB641A85DFCE001B4DDB /* UbuntuTitle.ttf */; };
 		3B54FB691A8626A9001B4DDB /* RankingsHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B54FB681A8626A9001B4DDB /* RankingsHandler.m */; };
 		3B54FB6B1A865CEC001B4DDB /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B54FB6A1A865CEC001B4DDB /* SystemConfiguration.framework */; };
 		3B54FB6E1A865D0F001B4DDB /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B54FB6D1A865D0F001B4DDB /* Reachability.m */; };
-		3B5BD6E81A8575F1007F6E2F /* WarlordsName.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B5BD6E71A8575F1007F6E2F /* WarlordsName.png */; };
-		3B69E7561A788A8100A878A3 /* MasterTeamViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B69E7551A788A8100A878A3 /* MasterTeamViewController.m */; };
+		3B7D24BE1A91B95E00F4DFF7 /* Ubuntu-R.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3B7D24BD1A91B95E00F4DFF7 /* Ubuntu-R.ttf */; };
 		3BA7BBC81A8132AF002E2936 /* TutorialHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BA7BBC71A8132AF002E2936 /* TutorialHandler.m */; };
 		3BA7BBCC1A8132E1002E2936 /* Tutorial.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BA7BBCB1A8132E1002E2936 /* Tutorial.m */; };
 		3BA7BBCF1A8149D8002E2936 /* TutorialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BA7BBCE1A8149D8002E2936 /* TutorialViewController.m */; };
@@ -58,6 +54,9 @@
 		3BC82EEE1A890507007CDA1F /* TeamInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BC82EED1A890507007CDA1F /* TeamInfoViewController.m */; };
 		3BC82EF11A890537007CDA1F /* RegionalInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BC82EF01A890537007CDA1F /* RegionalInfoViewController.m */; };
 		3BC82EF41A890BB3007CDA1F /* MatchInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BC82EF31A890BB3007CDA1F /* MatchInfoViewController.m */; };
+		3BC82EFA1A8B48CC007CDA1F /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BC82EF91A8B48CC007CDA1F /* User.m */; };
+		3BC82F011A8BF495007CDA1F /* SignInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BC82F001A8BF495007CDA1F /* SignInViewController.m */; };
+		3BC82F041A8C85B5007CDA1F /* ScoutingFormViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BC82F031A8C85B5007CDA1F /* ScoutingFormViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,14 +81,12 @@
 		2929F8081A63931C00901483 /* DetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		2929F80B1A63931D00901483 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2929F80D1A63931D00901483 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		2929F8101A63931D00901483 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		2929F8161A63931D00901483 /* Team 2485Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Team 2485Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2929F81B1A63931D00901483 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2929F81C1A63931D00901483 /* Team_2485Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Team_2485Tests.m; sourceTree = "<group>"; };
 		29340B581A6398C0004CCDFB /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		3B2196951A85469A0010C5E1 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Constants.h; path = ../Constants.h; sourceTree = "<group>"; };
 		3B2196961A85469A0010C5E1 /* Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Constants.m; path = ../Constants.m; sourceTree = "<group>"; };
-		3B2196981A854B7A0010C5E1 /* WarlordsLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = WarlordsLogo.png; sourceTree = "<group>"; };
 		3B21969A1A85699B0010C5E1 /* Match.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Match.h; sourceTree = "<group>"; };
 		3B21969B1A85699B0010C5E1 /* Match.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Match.m; sourceTree = "<group>"; };
 		3B21969D1A856B970010C5E1 /* Regional.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Regional.h; sourceTree = "<group>"; };
@@ -105,18 +102,12 @@
 		3B4B0AA41A735E8D0091E972 /* UpcomingEventsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UpcomingEventsViewController.m; sourceTree = "<group>"; };
 		3B54FB5B1A85A694001B4DDB /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		3B54FB601A85DADA001B4DDB /* boombox2.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = boombox2.ttf; sourceTree = "<group>"; };
-		3B54FB621A85DC04001B4DDB /* UbuntuMono-R.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "UbuntuMono-R.ttf"; sourceTree = "<group>"; };
-		3B54FB631A85DDE0001B4DDB /* UbuntuMono-B.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "UbuntuMono-B.ttf"; sourceTree = "<group>"; };
-		3B54FB641A85DFCE001B4DDB /* UbuntuTitle.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = UbuntuTitle.ttf; sourceTree = "<group>"; };
-		3B54FB661A85E216001B4DDB /* Ubuntu-R.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Ubuntu-R.ttf"; sourceTree = "<group>"; };
 		3B54FB671A8626A9001B4DDB /* RankingsHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RankingsHandler.h; sourceTree = "<group>"; };
 		3B54FB681A8626A9001B4DDB /* RankingsHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RankingsHandler.m; sourceTree = "<group>"; };
 		3B54FB6A1A865CEC001B4DDB /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		3B54FB6C1A865D0F001B4DDB /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		3B54FB6D1A865D0F001B4DDB /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
-		3B5BD6E71A8575F1007F6E2F /* WarlordsName.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = WarlordsName.png; sourceTree = "<group>"; };
-		3B69E7541A788A8100A878A3 /* MasterTeamViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MasterTeamViewController.h; sourceTree = "<group>"; };
-		3B69E7551A788A8100A878A3 /* MasterTeamViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MasterTeamViewController.m; sourceTree = "<group>"; };
+		3B7D24BD1A91B95E00F4DFF7 /* Ubuntu-R.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Ubuntu-R.ttf"; sourceTree = "<group>"; };
 		3BA7BBC61A8132AF002E2936 /* TutorialHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TutorialHandler.h; path = ../TutorialHandler.h; sourceTree = "<group>"; };
 		3BA7BBC71A8132AF002E2936 /* TutorialHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TutorialHandler.m; path = ../TutorialHandler.m; sourceTree = "<group>"; };
 		3BA7BBCA1A8132E1002E2936 /* Tutorial.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tutorial.h; sourceTree = "<group>"; };
@@ -167,6 +158,12 @@
 		3BC82EF01A890537007CDA1F /* RegionalInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegionalInfoViewController.m; sourceTree = "<group>"; };
 		3BC82EF21A890BB3007CDA1F /* MatchInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MatchInfoViewController.h; sourceTree = "<group>"; };
 		3BC82EF31A890BB3007CDA1F /* MatchInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MatchInfoViewController.m; sourceTree = "<group>"; };
+		3BC82EF81A8B48CC007CDA1F /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		3BC82EF91A8B48CC007CDA1F /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
+		3BC82EFF1A8BF495007CDA1F /* SignInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignInViewController.h; sourceTree = "<group>"; };
+		3BC82F001A8BF495007CDA1F /* SignInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignInViewController.m; sourceTree = "<group>"; };
+		3BC82F021A8C85B5007CDA1F /* ScoutingFormViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ScoutingFormViewController.h; path = ../ScoutingFormViewController.h; sourceTree = "<group>"; };
+		3BC82F031A8C85B5007CDA1F /* ScoutingFormViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ScoutingFormViewController.m; path = ../ScoutingFormViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -232,21 +229,15 @@
 			isa = PBXGroup;
 			children = (
 				3B54FB6C1A865D0F001B4DDB /* Reachability.h */,
+				3B7D24BD1A91B95E00F4DFF7 /* Ubuntu-R.ttf */,
 				3B54FB6D1A865D0F001B4DDB /* Reachability.m */,
-				3B54FB641A85DFCE001B4DDB /* UbuntuTitle.ttf */,
 				3B54FB601A85DADA001B4DDB /* boombox2.ttf */,
-				3B54FB621A85DC04001B4DDB /* UbuntuMono-R.ttf */,
 				2929F80D1A63931D00901483 /* Images.xcassets */,
-				2929F80F1A63931D00901483 /* LaunchScreen.xib */,
 				2929F8011A63931C00901483 /* AppDelegate.h */,
 				2929F8021A63931C00901483 /* AppDelegate.m */,
 				3B2196951A85469A0010C5E1 /* Constants.h */,
-				3B54FB661A85E216001B4DDB /* Ubuntu-R.ttf */,
 				3B2196961A85469A0010C5E1 /* Constants.m */,
-				3B5BD6E71A8575F1007F6E2F /* WarlordsName.png */,
-				3B2196981A854B7A0010C5E1 /* WarlordsLogo.png */,
 				2929F7FE1A63931C00901483 /* Info.plist */,
-				3B54FB631A85DDE0001B4DDB /* UbuntuMono-B.ttf */,
 				2929F7FF1A63931C00901483 /* main.m */,
 			);
 			name = "Supporting Files";
@@ -350,8 +341,12 @@
 		3BBC066E1A84172F0043CC38 /* Sign-In */ = {
 			isa = PBXGroup;
 			children = (
-				3B69E7541A788A8100A878A3 /* MasterTeamViewController.h */,
-				3B69E7551A788A8100A878A3 /* MasterTeamViewController.m */,
+				3BC82F021A8C85B5007CDA1F /* ScoutingFormViewController.h */,
+				3BC82F031A8C85B5007CDA1F /* ScoutingFormViewController.m */,
+				3BC82EF81A8B48CC007CDA1F /* User.h */,
+				3BC82EF91A8B48CC007CDA1F /* User.m */,
+				3BC82EFF1A8BF495007CDA1F /* SignInViewController.h */,
+				3BC82F001A8BF495007CDA1F /* SignInViewController.m */,
 			);
 			name = "Sign-In";
 			sourceTree = "<group>";
@@ -494,10 +489,8 @@
 			files = (
 				3B54FB611A85DADA001B4DDB /* boombox2.ttf in Resources */,
 				2929F80C1A63931D00901483 /* Main.storyboard in Resources */,
-				2929F8111A63931D00901483 /* LaunchScreen.xib in Resources */,
-				3B2196991A854B7A0010C5E1 /* WarlordsLogo.png in Resources */,
+				3B7D24BE1A91B95E00F4DFF7 /* Ubuntu-R.ttf in Resources */,
 				2929F80E1A63931D00901483 /* Images.xcassets in Resources */,
-				3B5BD6E81A8575F1007F6E2F /* WarlordsName.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -505,7 +498,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3B54FB651A85DFCE001B4DDB /* UbuntuTitle.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -516,9 +508,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3BC82F041A8C85B5007CDA1F /* ScoutingFormViewController.m in Sources */,
 				3BC82EF41A890BB3007CDA1F /* MatchInfoViewController.m in Sources */,
 				3BBC066C1A84126D0043CC38 /* TwitterFeedHandler.m in Sources */,
 				3BBC068F1A843CF90043CC38 /* NSDateFormatter+STTwitter.m in Sources */,
+				3BC82F011A8BF495007CDA1F /* SignInViewController.m in Sources */,
 				2929F8031A63931C00901483 /* AppDelegate.m in Sources */,
 				3B4B0A821A72F6AD0091E972 /* UpcomingEventsHandler.m in Sources */,
 				2929F8061A63931C00901483 /* MasterViewController.m in Sources */,
@@ -542,13 +536,13 @@
 				3BBC06901A843CF90043CC38 /* NSError+STTwitter.m in Sources */,
 				3B4B0A991A73103A0091E972 /* Event.m in Sources */,
 				3BC82EF11A890537007CDA1F /* RegionalInfoViewController.m in Sources */,
-				3B69E7561A788A8100A878A3 /* MasterTeamViewController.m in Sources */,
 				3B21969C1A85699B0010C5E1 /* Match.m in Sources */,
 				3B54FB6E1A865D0F001B4DDB /* Reachability.m in Sources */,
 				3B54FB691A8626A9001B4DDB /* RankingsHandler.m in Sources */,
 				3BBC06941A843CF90043CC38 /* STTwitterAppOnly.m in Sources */,
 				3BBC069B1A843CF90043CC38 /* STHTTPRequest.m in Sources */,
 				3BA7BBCF1A8149D8002E2936 /* TutorialViewController.m in Sources */,
+				3BC82EFA1A8B48CC007CDA1F /* User.m in Sources */,
 				3BC82EEB1A88814E007CDA1F /* ListOfMatches.m in Sources */,
 				3B2196971A85469A0010C5E1 /* Constants.m in Sources */,
 				3BC82EEE1A890507007CDA1F /* TeamInfoViewController.m in Sources */,
@@ -580,14 +574,6 @@
 				2929F80B1A63931D00901483 /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		2929F80F1A63931D00901483 /* LaunchScreen.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				2929F8101A63931D00901483 /* Base */,
-			);
-			name = LaunchScreen.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -675,6 +661,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
 				GCC_PREFIX_HEADER = PrefixHeader.pch;
 				HEADER_SEARCH_PATHS = "$(SDKROOT)/usr/include/libxml2";
@@ -683,7 +670,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Team 2485/Team 2485-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -691,6 +678,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
 				GCC_PREFIX_HEADER = PrefixHeader.pch;
 				HEADER_SEARCH_PATHS = "$(SDKROOT)/usr/include/libxml2";
@@ -698,7 +686,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Team 2485/Team 2485-Bridging-Header.h";
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};

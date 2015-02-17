@@ -10,6 +10,6 @@
 
 @implementation Event
 -(NSString *)description {
-    return self.name;
+    return [NSString stringWithFormat:@"%@ - %@", self.formattedDate, self.name];
 }
 @end

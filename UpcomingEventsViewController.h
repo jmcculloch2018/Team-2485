@@ -14,5 +14,5 @@
 @property IBOutlet UITextView *label;
 @property IBOutlet UINavigationItem *navBar;
 @property (strong, nonatomic)UIViewController *parent;
-+(UpcomingEventsViewController *)newWithEvent: (Event *) ev;
+-(void)initWithEvent: (Event *) ev;
 @end

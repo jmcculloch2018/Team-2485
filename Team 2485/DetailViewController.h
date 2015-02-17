@@ -8,13 +8,14 @@
 
 #import "Constants.h"
 #import "Team.h"
-@interface DetailViewController : UIViewController <UISearchDisplayDelegate, UISearchBarDelegate>
-
+@interface DetailViewController : UIViewController <UISearchDisplayDelegate, UISearchBarDelegate, UITextFieldDelegate>
+@property (strong, nonatomic) UIViewController *parent;
 @property (strong, nonatomic) id detailItem;
 @property (strong, nonatomic) IBOutlet UINavigationItem *navBar;//Displays "twitter feed", or "Media"
 @property (strong, nonatomic) IBOutlet UIViewController *uevc;
-@property (strong, nonatomic) UIViewController *parent;
-@property (strong, nonatomic) UITextField *tf;
 @property Team *theTeam;
-
+@property IBOutlet UIViewController *master;
+@property NSMutableArray *comps;
+@property (strong, nonatomic) UITextField *tf, *tf2, *tf3, *tf4;
+-(void)makeSignIn;
 @end

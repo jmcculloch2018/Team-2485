@@ -13,22 +13,23 @@
 @end
 
 @implementation RegionalInfoViewController
-+(RegionalInfoViewController *)newWithRegional:(Regional *)reggy {
+-(void)initWithRegional: (Regional *)reggy {
     
-    RegionalInfoViewController *rivc = [[RegionalInfoViewController alloc] init];
-    UILabel *lab=[[UILabel alloc] initWithFrame:CGRectMake(0, 65, rivc.view.frame.size.width, 50)];
+    UILabel *lab=[[UILabel alloc] initWithFrame:CGRectMake(0*widthMultiplier(self), 40*heightMultiplier(self), 320*widthMultiplier(self), 100*heightMultiplier(self))];
     lab.text = reggy.name;
     lab.textAlignment=NSTextAlignmentCenter;
-    lab.font  = [UIFont boldSystemFontOfSize:24];
-    [rivc.view addSubview:lab];
-    UILabel *lab2=[[UILabel alloc] initWithFrame:CGRectMake(0, 140, rivc.view.frame.size.width, 50)];
+    lab.font  = [Constants title: widthMultiplier(self) * 24];
+    [self.view addSubview:lab];
+    lab.numberOfLines = 3;
+    UILabel *lab2=[[UILabel alloc] initWithFrame:CGRectMake(0*widthMultiplier(self), 115*heightMultiplier(self), 320*widthMultiplier(self), 100*heightMultiplier(self))];
     lab2.text=[@"Location: " stringByAppendingString: reggy.location];
     lab2.textAlignment=NSTextAlignmentCenter;
     lab.textColor = [Constants gold];lab2.textColor = [Constants gold];
-    lab2.font  = [UIFont boldSystemFontOfSize:24];
-    [rivc.view addSubview:lab2];
+    lab2.font  = [Constants body: widthMultiplier(self) * 24];
+    lab2.numberOfLines = 3;
+    [self.view addSubview:lab2];
     UILabel *lab3=[[UILabel alloc] initWithFrame:
-                   CGRectMake(0, 225, rivc.view.frame.size.width, 50)];
+                   CGRectMake(0*widthMultiplier(self), 225*heightMultiplier(self), 320*widthMultiplier(self), 50*heightMultiplier(self))];
     lab3.textAlignment=NSTextAlignmentCenter;
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     [formatter setDateFormat:@"yyyy-MM-dd"];
@@ -36,36 +37,24 @@
     NSString *temp = [formatter stringFromDate: dat];
     NSString *t = [ @"Start Date: " stringByAppendingString: temp];
     lab3.text = t;
-    lab3.font  = [UIFont boldSystemFontOfSize:24];
+    lab3.font  = [Constants body: widthMultiplier(self) * 24];
     lab3.textColor = [Constants gold];
-    [rivc.view addSubview:lab3];
+    [self.view addSubview:lab3];
     
-    rivc.url = reggy.url;
-    if (![rivc.url isEqualToString:@""]) {
+    self.url = reggy.url;
+    if (![self.url isEqualToString:@""]) {
         UIButton *but = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-        but.frame = CGRectMake(0, 310, rivc.view.frame.size.width, 50);
+        but.frame = CGRectMake(0*widthMultiplier(self), 310*heightMultiplier(self), 320*widthMultiplier(self), 50*heightMultiplier(self));
         [but setTitle:@"Visit Website" forState:UIControlStateNormal];
         [but setTitleColor:[Constants gold] forState:UIControlStateNormal];
-        [but setFont:[UIFont boldSystemFontOfSize: 24]];
-        [but addTarget:rivc
+        [but setFont:[Constants body: widthMultiplier(self) *  24]];
+        [but addTarget:self
                 action:@selector(web:)
       forControlEvents:UIControlEventTouchUpInside];
-        [rivc.view addSubview:but];
+        [self.view addSubview:but];
     }
-    rivc.view.backgroundColor=[UIColor blackColor];
+    self.view.backgroundColor=[UIColor blackColor];
     
-    UIButton *but = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    but.frame = CGRectMake(10, 15, 100, 50);
-    [but setTitle:@"Close" forState:UIControlStateNormal];
-    [but setTitleColor:[Constants gold] forState:UIControlStateNormal];
-    [but setFont:[UIFont systemFontOfSize:20]];
-    [but addTarget:rivc
-            action:@selector(back:)
-  forControlEvents:UIControlEventTouchUpInside];
-    [rivc.view addSubview:but];
-    rivc.view.backgroundColor=[UIColor blackColor];
-    
-    return rivc;
 }
 -(IBAction)back:(id)sender {
     [self.parent dismissViewControllerAnimated:TRUE completion:nil];

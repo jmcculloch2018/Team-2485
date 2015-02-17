@@ -8,8 +8,12 @@
 
 @interface Constants : NSObject
 +(UIColor *) gold;
-+(UIColor *) gold2;
++(UIColor *) systemBlue;
 +(NSString *)password;
 +(int) year;
 +(NSString *)twitterAccount;
++(NSString *)about;
++(UIFont *)body: (int) size;
++(UIFont *)title: (int) size;
+
 @end

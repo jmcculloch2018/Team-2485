@@ -12,30 +12,33 @@
 @end
 
 @implementation TwitterFeedViewController
-+(TwitterFeedViewController *)newWithDescription: (NSString *) description {
-    TwitterFeedViewController *tfvc = [[TwitterFeedViewController alloc] init];
-    UILabel *lab=[[UILabel alloc] initWithFrame:CGRectMake(0, 65, tfvc.view.frame.size.width, tfvc.view.frame.size.height-110)];
-    lab.font=[UIFont fontWithName:@"Helvetica" size:25];
+-(void)initWithDescription: (NSString *) description {
+    UILabel *lab=[[UILabel alloc] initWithFrame:CGRectMake(0*widthMultiplier(self), heightMultiplier(self) * 65, 320*widthMultiplier(self), heightMultiplier(self) * 370)];
+    lab.font= [Constants body: widthMultiplier(self) * 25];
     lab.textColor = [Constants gold];
     lab.text=description;
     lab.textAlignment = NSTextAlignmentCenter;
     lab.numberOfLines = 10;
-    lab.font = [UIFont boldSystemFontOfSize: 24];
-    [tfvc.view addSubview:lab];
-    UIButton *but = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    but.frame = CGRectMake(10, 15, 100, 50);;
-    [but setTitle:@"Close" forState:UIControlStateNormal];
-    [but setTitleColor:[Constants gold] forState:UIControlStateNormal];
-    [but setFont:[UIFont systemFontOfSize:20]];
-    [but addTarget:tfvc
-            action:@selector(back:)
-  forControlEvents:UIControlEventTouchUpInside];
-    [tfvc.view addSubview:but];
-    tfvc.view.backgroundColor=[UIColor blackColor];
-    return tfvc;
+    [self.view addSubview:lab];
+    @try {
+        self.url = [TwitterFeedHandler getUrlFromString:description];
+        UIButton *but = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+        but.frame = CGRectMake(130*widthMultiplier(self), heightMultiplier(self) * 400, 100*widthMultiplier(self), heightMultiplier(self) * 50);;
+        [but setTitle:@"Visit URL" forState:UIControlStateNormal];
+        [but setTitleColor:[Constants gold] forState:UIControlStateNormal];
+        [but setFont:[Constants body: widthMultiplier(self) * 20]];
+        [but addTarget:self
+                action:@selector(openWebpage:)
+      forControlEvents:UIControlEventTouchUpInside];
+        [self.view addSubview:but];
+    } @catch (NSException *exception) {
+        
+    }
+    self.view.backgroundColor=[UIColor blackColor];
 }
--(IBAction)back:(id)sender {
-    [self.parent dismissViewControllerAnimated:TRUE completion:nil];
+-(IBAction)openWebpage:(id)sender {
+    NSURL *url = [NSURL URLWithString:_url];
+    [[UIApplication sharedApplication] openURL:url];
 }
 - (void)viewDidLoad {
     [super viewDidLoad];

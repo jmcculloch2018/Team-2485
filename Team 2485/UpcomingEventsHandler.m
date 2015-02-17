@@ -27,7 +27,7 @@
     
     for (NSString *eventStr in splitEvents) {
         
-        NSArray *eventData = [eventStr componentsSeparatedByString:@","];
+        NSArray *eventData = [eventStr componentsSeparatedByString:@"$"];
     
         if ([eventData count]>1) {
             Event *ev = [[Event alloc] init];

@@ -12,39 +12,32 @@
 @end
 
 @implementation UpcomingEventsViewController
-+(UpcomingEventsViewController *)newWithEvent: (Event *) ev {
-    UpcomingEventsViewController *uevc = [[UpcomingEventsViewController alloc] init];
-    UILabel *lab=[[UILabel alloc] initWithFrame:CGRectMake(0, 65, uevc.view.frame.size.width, 50)];
+-(void)initWithEvent: (Event *) ev {
+    UILabel *lab=[[UILabel alloc] initWithFrame:CGRectMake(0* widthMultiplier(self), heightMultiplier(self) * 65, 320* widthMultiplier(self), heightMultiplier(self) * 50)];
     lab.text = ev.name;
     lab.textAlignment=NSTextAlignmentCenter;
-    lab.font  = [UIFont boldSystemFontOfSize:24];
-    [uevc.view addSubview:lab];
-    UILabel *lab2=[[UILabel alloc] initWithFrame:CGRectMake(0, 140, uevc.view.frame.size.width, 50)];
+    lab.font = [Constants title: widthMultiplier(self) *24];
+    [self.view addSubview:lab];
+    UILabel *lab2=[[UILabel alloc] initWithFrame:CGRectMake(0* widthMultiplier(self), heightMultiplier(self) * 140, 320* widthMultiplier(self), heightMultiplier(self) * 50)];
     lab2.text=[@"When: " stringByAppendingString:[ev formattedDate]];
     lab2.textAlignment=NSTextAlignmentCenter;
     lab.textColor = [Constants gold];lab2.textColor = [Constants gold];
-    lab2.font  = [UIFont boldSystemFontOfSize:24];
-    [uevc.view addSubview:lab2];
+    lab2.font  = [Constants body: widthMultiplier(self) *24];
+    [self.view addSubview:lab2];
     if (![[ev location] isEqualToString:@""]) {
         UILabel *lab3=[[UILabel alloc] initWithFrame:
-                       CGRectMake(0, 225, uevc.view.frame.size.width, 50)];
+                       CGRectMake(0* widthMultiplier(self), heightMultiplier(self) * 225, 320* widthMultiplier(self), heightMultiplier(self) * 150)];
         lab3.textAlignment=NSTextAlignmentCenter;
         lab3.text=[@"Where: " stringByAppendingString:[ev location]];
-        lab3.font  = [UIFont boldSystemFontOfSize:24];
+        lab3.font  = [Constants body: widthMultiplier(self) *24];
         lab3.textColor = [Constants gold];
-        [uevc.view addSubview:lab3];
+        lab3.numberOfLines = 4;
+        [lab3 sizeToFit];
+        [self.view addSubview:lab3];
     }
-    UIButton *but = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    but.frame = CGRectMake(10, 15, 100, 50);    [but setTitle:@"Close" forState:UIControlStateNormal];
-    [but setTitleColor:[Constants gold] forState:UIControlStateNormal];
-    [but setFont:[UIFont systemFontOfSize:20]];
-    [but addTarget:uevc
-            action:@selector(back:)
-  forControlEvents:UIControlEventTouchUpInside];
-    [uevc.view addSubview:but];
-    uevc.view.backgroundColor=[UIColor blackColor];
 
-    return uevc;
+    self.view.backgroundColor=[UIColor blackColor];
+
 }
 -(IBAction)back:(id)sender {
     [self.parent dismissViewControllerAnimated:TRUE completion:nil];

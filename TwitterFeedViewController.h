@@ -13,6 +13,7 @@
 @property IBOutlet UITextView *label;
 @property IBOutlet UINavigationItem *navBar;
 @property (strong, nonatomic)UIViewController *parent;
-+(TwitterFeedViewController *)newWithDescription: (NSString *) description;
+@property (strong, nonatomic)NSString *url;
+-(void)initWithDescription: (NSString *) description ;
 @end
 
