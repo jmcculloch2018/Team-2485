@@ -8,6 +8,7 @@
 
 @interface Constants : NSObject
 +(UIColor *) gold;
++(UIColor *) black;
 +(UIColor *) systemBlue;
 +(NSString *)password;
 +(int) year;
@@ -15,5 +16,5 @@
 +(NSString *)about;
 +(UIFont *)body: (int) size;
 +(UIFont *)title: (int) size;
-
++(int)mondayOfWeek1;
 @end

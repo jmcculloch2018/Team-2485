@@ -11,6 +11,9 @@
 +(UIColor *) gold {
     return [UIColor colorWithRed:227/255.0 green:191/255.0 blue:34/255.0 alpha:1.0];
 }
++(UIColor *) black {
+    return [UIColor colorWithRed:22/255.0 green:19/255.0 blue:3/255.0 alpha:1.0];
+}
 +(NSString *) password {
     return  @"warlords2485valkyrie";
 }
@@ -18,7 +21,7 @@
     return [[[[UIApplication sharedApplication] delegate] window] tintColor];
 }
 +(int) year {
-    return 2014;
+    return 2015/*-1;//*/;
 }
 +(NSString *)twitterAccount {
     return @"FRCTeams";
@@ -33,5 +36,8 @@
 +(UIFont *)title: (int) size {
     return [UIFont fontWithName:@"BoomBox 2" size:size];
 
+}
++(int)mondayOfWeek1 {
+    return 16489/*-360;//*/;
 }
 @end

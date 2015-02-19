@@ -30,7 +30,6 @@
 		3B7D24BE1A91B95E00F4DFF7 /* Ubuntu-R.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3B7D24BD1A91B95E00F4DFF7 /* Ubuntu-R.ttf */; };
 		3BA7BBC81A8132AF002E2936 /* TutorialHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BA7BBC71A8132AF002E2936 /* TutorialHandler.m */; };
 		3BA7BBCC1A8132E1002E2936 /* Tutorial.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BA7BBCB1A8132E1002E2936 /* Tutorial.m */; };
-		3BA7BBCF1A8149D8002E2936 /* TutorialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BA7BBCE1A8149D8002E2936 /* TutorialViewController.m */; };
 		3BA7BBD11A819B5D002E2936 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BA7BBD01A819B5D002E2936 /* MediaPlayer.framework */; };
 		3BBC066C1A84126D0043CC38 /* TwitterFeedHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BBC066B1A84126D0043CC38 /* TwitterFeedHandler.m */; };
 		3BBC068F1A843CF90043CC38 /* NSDateFormatter+STTwitter.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BBC06731A843CF90043CC38 /* NSDateFormatter+STTwitter.m */; };
@@ -55,8 +54,6 @@
 		3BC82EF11A890537007CDA1F /* RegionalInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BC82EF01A890537007CDA1F /* RegionalInfoViewController.m */; };
 		3BC82EF41A890BB3007CDA1F /* MatchInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BC82EF31A890BB3007CDA1F /* MatchInfoViewController.m */; };
 		3BC82EFA1A8B48CC007CDA1F /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BC82EF91A8B48CC007CDA1F /* User.m */; };
-		3BC82F011A8BF495007CDA1F /* SignInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BC82F001A8BF495007CDA1F /* SignInViewController.m */; };
-		3BC82F041A8C85B5007CDA1F /* ScoutingFormViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BC82F031A8C85B5007CDA1F /* ScoutingFormViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -112,8 +109,6 @@
 		3BA7BBC71A8132AF002E2936 /* TutorialHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TutorialHandler.m; path = ../TutorialHandler.m; sourceTree = "<group>"; };
 		3BA7BBCA1A8132E1002E2936 /* Tutorial.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tutorial.h; sourceTree = "<group>"; };
 		3BA7BBCB1A8132E1002E2936 /* Tutorial.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tutorial.m; sourceTree = "<group>"; };
-		3BA7BBCD1A8149D8002E2936 /* TutorialViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TutorialViewController.h; path = ../TutorialViewController.h; sourceTree = "<group>"; };
-		3BA7BBCE1A8149D8002E2936 /* TutorialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TutorialViewController.m; path = ../TutorialViewController.m; sourceTree = "<group>"; };
 		3BA7BBD01A819B5D002E2936 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		3BBC066A1A84126D0043CC38 /* TwitterFeedHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwitterFeedHandler.h; sourceTree = "<group>"; };
 		3BBC066B1A84126D0043CC38 /* TwitterFeedHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TwitterFeedHandler.m; sourceTree = "<group>"; };
@@ -160,10 +155,6 @@
 		3BC82EF31A890BB3007CDA1F /* MatchInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MatchInfoViewController.m; sourceTree = "<group>"; };
 		3BC82EF81A8B48CC007CDA1F /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
 		3BC82EF91A8B48CC007CDA1F /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
-		3BC82EFF1A8BF495007CDA1F /* SignInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignInViewController.h; sourceTree = "<group>"; };
-		3BC82F001A8BF495007CDA1F /* SignInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignInViewController.m; sourceTree = "<group>"; };
-		3BC82F021A8C85B5007CDA1F /* ScoutingFormViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ScoutingFormViewController.h; path = ../ScoutingFormViewController.h; sourceTree = "<group>"; };
-		3BC82F031A8C85B5007CDA1F /* ScoutingFormViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ScoutingFormViewController.m; path = ../ScoutingFormViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -228,17 +219,16 @@
 		2929F7FD1A63931C00901483 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				3B54FB6C1A865D0F001B4DDB /* Reachability.h */,
-				3B7D24BD1A91B95E00F4DFF7 /* Ubuntu-R.ttf */,
-				3B54FB6D1A865D0F001B4DDB /* Reachability.m */,
-				3B54FB601A85DADA001B4DDB /* boombox2.ttf */,
-				2929F80D1A63931D00901483 /* Images.xcassets */,
 				2929F8011A63931C00901483 /* AppDelegate.h */,
 				2929F8021A63931C00901483 /* AppDelegate.m */,
+				2929F7FF1A63931C00901483 /* main.m */,
+				2929F7FE1A63931C00901483 /* Info.plist */,
+				2929F80D1A63931D00901483 /* Images.xcassets */,
+				3B54FB6C1A865D0F001B4DDB /* Reachability.h */,
+				3B54FB6D1A865D0F001B4DDB /* Reachability.m */,
 				3B2196951A85469A0010C5E1 /* Constants.h */,
 				3B2196961A85469A0010C5E1 /* Constants.m */,
-				2929F7FE1A63931C00901483 /* Info.plist */,
-				2929F7FF1A63931C00901483 /* main.m */,
+				3B3C1A9C1A953ED000844360 /* Fonts */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -260,6 +250,43 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		3B3C1A9C1A953ED000844360 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				3B7D24BD1A91B95E00F4DFF7 /* Ubuntu-R.ttf */,
+				3B54FB601A85DADA001B4DDB /* boombox2.ttf */,
+			);
+			name = Fonts;
+			sourceTree = "<group>";
+		};
+		3B3C1A9D1A953EE700844360 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				3BC82EEC1A890507007CDA1F /* TeamInfoViewController.h */,
+				3BC82EED1A890507007CDA1F /* TeamInfoViewController.m */,
+				3BC82EEF1A890537007CDA1F /* RegionalInfoViewController.h */,
+				3BC82EF01A890537007CDA1F /* RegionalInfoViewController.m */,
+				3BC82EF21A890BB3007CDA1F /* MatchInfoViewController.h */,
+				3BC82EF31A890BB3007CDA1F /* MatchInfoViewController.m */,
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		3B3C1A9E1A953EF500844360 /* Data Structures */ = {
+			isa = PBXGroup;
+			children = (
+				3BC82EE91A88814E007CDA1F /* ListOfMatches.h */,
+				3BC82EEA1A88814E007CDA1F /* ListOfMatches.m */,
+				3B21969D1A856B970010C5E1 /* Regional.h */,
+				3B21969E1A856B970010C5E1 /* Regional.m */,
+				3B2196A01A856D190010C5E1 /* Team.h */,
+				3B2196A11A856D190010C5E1 /* Team.m */,
+				3B21969A1A85699B0010C5E1 /* Match.h */,
+				3B21969B1A85699B0010C5E1 /* Match.m */,
+			);
+			name = "Data Structures";
+			sourceTree = "<group>";
+		};
 		3B4B0A891A72F7DE0091E972 /* Upcoming Events */ = {
 			isa = PBXGroup;
 			children = (
@@ -277,20 +304,8 @@
 		3B5BD6E31A857204007F6E2F /* Rankings */ = {
 			isa = PBXGroup;
 			children = (
-				3BC82EE91A88814E007CDA1F /* ListOfMatches.h */,
-				3BC82EEA1A88814E007CDA1F /* ListOfMatches.m */,
-				3B21969D1A856B970010C5E1 /* Regional.h */,
-				3B21969E1A856B970010C5E1 /* Regional.m */,
-				3B2196A01A856D190010C5E1 /* Team.h */,
-				3B2196A11A856D190010C5E1 /* Team.m */,
-				3B21969A1A85699B0010C5E1 /* Match.h */,
-				3B21969B1A85699B0010C5E1 /* Match.m */,
-				3BC82EEC1A890507007CDA1F /* TeamInfoViewController.h */,
-				3BC82EED1A890507007CDA1F /* TeamInfoViewController.m */,
-				3BC82EEF1A890537007CDA1F /* RegionalInfoViewController.h */,
-				3BC82EF01A890537007CDA1F /* RegionalInfoViewController.m */,
-				3BC82EF21A890BB3007CDA1F /* MatchInfoViewController.h */,
-				3BC82EF31A890BB3007CDA1F /* MatchInfoViewController.m */,
+				3B3C1A9E1A953EF500844360 /* Data Structures */,
+				3B3C1A9D1A953EE700844360 /* View Controllers */,
 				3B54FB671A8626A9001B4DDB /* RankingsHandler.h */,
 				3B54FB681A8626A9001B4DDB /* RankingsHandler.m */,
 			);
@@ -317,8 +332,6 @@
 			children = (
 				3BA7BBC61A8132AF002E2936 /* TutorialHandler.h */,
 				3BA7BBC71A8132AF002E2936 /* TutorialHandler.m */,
-				3BA7BBCD1A8149D8002E2936 /* TutorialViewController.h */,
-				3BA7BBCE1A8149D8002E2936 /* TutorialViewController.m */,
 				3BA7BBCA1A8132E1002E2936 /* Tutorial.h */,
 				3BA7BBCB1A8132E1002E2936 /* Tutorial.m */,
 			);
@@ -341,12 +354,8 @@
 		3BBC066E1A84172F0043CC38 /* Sign-In */ = {
 			isa = PBXGroup;
 			children = (
-				3BC82F021A8C85B5007CDA1F /* ScoutingFormViewController.h */,
-				3BC82F031A8C85B5007CDA1F /* ScoutingFormViewController.m */,
 				3BC82EF81A8B48CC007CDA1F /* User.h */,
 				3BC82EF91A8B48CC007CDA1F /* User.m */,
-				3BC82EFF1A8BF495007CDA1F /* SignInViewController.h */,
-				3BC82F001A8BF495007CDA1F /* SignInViewController.m */,
 			);
 			name = "Sign-In";
 			sourceTree = "<group>";
@@ -508,11 +517,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3BC82F041A8C85B5007CDA1F /* ScoutingFormViewController.m in Sources */,
 				3BC82EF41A890BB3007CDA1F /* MatchInfoViewController.m in Sources */,
 				3BBC066C1A84126D0043CC38 /* TwitterFeedHandler.m in Sources */,
 				3BBC068F1A843CF90043CC38 /* NSDateFormatter+STTwitter.m in Sources */,
-				3BC82F011A8BF495007CDA1F /* SignInViewController.m in Sources */,
 				2929F8031A63931C00901483 /* AppDelegate.m in Sources */,
 				3B4B0A821A72F6AD0091E972 /* UpcomingEventsHandler.m in Sources */,
 				2929F8061A63931C00901483 /* MasterViewController.m in Sources */,
@@ -541,7 +548,6 @@
 				3B54FB691A8626A9001B4DDB /* RankingsHandler.m in Sources */,
 				3BBC06941A843CF90043CC38 /* STTwitterAppOnly.m in Sources */,
 				3BBC069B1A843CF90043CC38 /* STHTTPRequest.m in Sources */,
-				3BA7BBCF1A8149D8002E2936 /* TutorialViewController.m in Sources */,
 				3BC82EFA1A8B48CC007CDA1F /* User.m in Sources */,
 				3BC82EEB1A88814E007CDA1F /* ListOfMatches.m in Sources */,
 				3B2196971A85469A0010C5E1 /* Constants.m in Sources */,
@@ -663,11 +669,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PREFIX_HEADER = PrefixHeader.pch;
 				HEADER_SEARCH_PATHS = "$(SDKROOT)/usr/include/libxml2";
 				INFOPLIST_FILE = "Team 2485/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Team 2485/Team 2485-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -680,11 +689,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PREFIX_HEADER = PrefixHeader.pch;
 				HEADER_SEARCH_PATHS = "$(SDKROOT)/usr/include/libxml2";
 				INFOPLIST_FILE = "Team 2485/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Team 2485/Team 2485-Bridging-Header.h";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

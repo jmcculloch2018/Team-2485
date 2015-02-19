@@ -13,4 +13,6 @@
 @property NSString *name, *url;
 @property NSTimeInterval startDate;
 @property NSString *identifier;
+-(int)getWeek;
+
 @end

@@ -36,7 +36,9 @@
             ev.formattedDate = [eventData objectAtIndex:1];
             ev.location=@"";
             if ([eventData count]>2)
-                ev.location = [eventData objectAtIndex:2];
+                ev.location = [[[[eventData objectAtIndex:2]stringByReplacingOccurrencesOfString:@"&amp;" withString:@"&"]
+                stringByReplacingOccurrencesOfString:@"\\n" withString:@"\n"]
+                stringByReplacingOccurrencesOfString:@"\\\"" withString:@"\""];
             
             [events addObject:ev];
         }

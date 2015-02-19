@@ -34,7 +34,7 @@
     } @catch (NSException *exception) {
         
     }
-    self.view.backgroundColor=[UIColor blackColor];
+    self.view.backgroundColor=[Constants black];
 }
 -(IBAction)openWebpage:(id)sender {
     NSURL *url = [NSURL URLWithString:_url];

@@ -49,7 +49,7 @@
     NSString *htmlData = [NSString stringWithUTF8String:[tutorialsHtmlData bytes]];
     NSString *shortenedData = [htmlData substringWithRange:NSMakeRange(2, [htmlData length]-4)];
     
-    NSArray *splitData = [shortenedData componentsSeparatedByString:@"}, {\"key\""];//to differentiate from just
+    NSArray *splitData = [shortenedData componentsSeparatedByString:@"}, {\"key\""];//to differentiate from just list of videos
     for (NSString *str in splitData) {
          Regional *reg = [[Regional alloc] init];
         
@@ -79,6 +79,7 @@
     NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"startDate" ascending:YES];
     NSArray *sortDescriptors = [NSArray arrayWithObject:sortDescriptor];
     return [events sortedArrayUsingDescriptors:sortDescriptors];
+    
 }
 +(NSArray *)downloadRegsForTeam : (Team *) team {
     return [[RankingsHandler regsFromString:[NSString stringWithFormat:@"http://www.thebluealliance.com/api/v2/team/frc%i/%i/events?X-TBA-App-Id=frc2485:app:v01", team.number, [Constants year]]] arrayByAddingObject:@"More Info"];
@@ -143,13 +144,28 @@
             
             [ret.matches addObject:m];
         }
-    } else [ret.matches addObject:@"No matches are avaliable for the given selection" ];
+    } else [ret.matches addObject:@"No matches avaliable" ];
     
     return ret;
 }
 +(NSArray *)downloadRegs {
-    return [RankingsHandler regsFromString:
-            [NSString stringWithFormat:@"http://www.thebluealliance.com/api/v2/events/%i?X-TBA-App-Id=frc2485:app:v01", [Constants year]]];
+    NSMutableArray * arr = [[RankingsHandler regsFromString:
+            [NSString stringWithFormat:@"http://www.thebluealliance.com/api/v2/events/%i?X-TBA-App-Id=frc2485:app:v01", [Constants year]]] mutableCopy];
+    
+    int prevWeek = 0;
+    for (int i = (int)[arr count]-1; i>=0; i--) {
+        int currWeek = [arr[i] getWeek];
+        if (prevWeek != currWeek) {
+            if (currWeek<8 && prevWeek>=8) [arr insertObject:@"Championships/Offseason" atIndex:i+1];
+            else if (prevWeek<9&&prevWeek>0) [arr insertObject:[NSString stringWithFormat:@"Week %i", prevWeek] atIndex:i+1];
+            prevWeek = currWeek;
+            
+        }
+    }
+    if (prevWeek>0) [arr insertObject:[NSString stringWithFormat:@"Week %i", prevWeek] atIndex:0];
+
+    
+    return arr;
 }
 +(NSArray *)downloadTopTeams {
     NSMutableArray * teams = [NSMutableArray array]

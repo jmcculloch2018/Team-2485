@@ -52,7 +52,7 @@
       forControlEvents:UIControlEventTouchUpInside];
         [self.view addSubview:but];
     }
-    self.view.backgroundColor=[UIColor blackColor];
+    self.view.backgroundColor=[Constants black];
 }
 -(IBAction)web:(id)sender {
     NSURL *url = [NSURL URLWithString:_url];

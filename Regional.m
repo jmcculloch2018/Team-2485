@@ -12,4 +12,8 @@
 -(NSString *)description {
     return self.name;
 }
+-(int)getWeek {
+    int time  = self.startDate/86400 - [Constants mondayOfWeek1];//days since start of competition season
+    return time/7 + 1;
+}
 @end

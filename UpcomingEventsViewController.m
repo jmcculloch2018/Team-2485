@@ -13,30 +13,34 @@
 
 @implementation UpcomingEventsViewController
 -(void)initWithEvent: (Event *) ev {
-    UILabel *lab=[[UILabel alloc] initWithFrame:CGRectMake(0* widthMultiplier(self), heightMultiplier(self) * 65, 320* widthMultiplier(self), heightMultiplier(self) * 50)];
+    UILabel *lab=[[UILabel alloc] initWithFrame:CGRectMake(0* widthMultiplier(self), heightMultiplier(self) * 80, 320* widthMultiplier(self), heightMultiplier(self) * 100)];
     lab.text = ev.name;
+    lab.numberOfLines = 3;
     lab.textAlignment=NSTextAlignmentCenter;
     lab.font = [Constants title: widthMultiplier(self) *24];
+    [lab setFrame:CGRectMake(lab.frame.origin.x, lab.frame.origin.y, lab.frame.size.width, [lab sizeThatFits:CGSizeMake(1, 1)].height)] ;
     [self.view addSubview:lab];
-    UILabel *lab2=[[UILabel alloc] initWithFrame:CGRectMake(0* widthMultiplier(self), heightMultiplier(self) * 140, 320* widthMultiplier(self), heightMultiplier(self) * 50)];
+    UILabel *lab2=[[UILabel alloc] initWithFrame:CGRectMake(0* widthMultiplier(self), heightMultiplier(self) * 180, 320* widthMultiplier(self), heightMultiplier(self) * 100)];
     lab2.text=[@"When: " stringByAppendingString:[ev formattedDate]];
     lab2.textAlignment=NSTextAlignmentCenter;
     lab.textColor = [Constants gold];lab2.textColor = [Constants gold];
     lab2.font  = [Constants body: widthMultiplier(self) *24];
+    [lab2 setFrame:CGRectMake(lab2.frame.origin.x, lab2.frame.origin.y, lab2.frame.size.width, [lab2 sizeThatFits:CGSizeMake(1, 1)].height)] ;
+
     [self.view addSubview:lab2];
     if (![[ev location] isEqualToString:@""]) {
         UILabel *lab3=[[UILabel alloc] initWithFrame:
-                       CGRectMake(0* widthMultiplier(self), heightMultiplier(self) * 225, 320* widthMultiplier(self), heightMultiplier(self) * 150)];
+                       CGRectMake(0* widthMultiplier(self), heightMultiplier(self) * 230, 320* widthMultiplier(self), heightMultiplier(self) * 200)];
         lab3.textAlignment=NSTextAlignmentCenter;
         lab3.text=[@"Where: " stringByAppendingString:[ev location]];
         lab3.font  = [Constants body: widthMultiplier(self) *24];
         lab3.textColor = [Constants gold];
         lab3.numberOfLines = 4;
-        [lab3 sizeToFit];
+        [lab3 setFrame:CGRectMake(lab.frame.origin.x, lab3.frame.origin.y, lab3.frame.size.width, [lab3 sizeThatFits:CGSizeMake(1, 1)].height)] ;
         [self.view addSubview:lab3];
     }
 
-    self.view.backgroundColor=[UIColor blackColor];
+    self.view.backgroundColor=[Constants black];
 
 }
 -(IBAction)back:(id)sender {

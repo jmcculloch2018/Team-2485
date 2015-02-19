@@ -39,11 +39,11 @@ static double hMult, wMult;
     self.navigationController.navigationBar.barTintColor = [Constants gold];
     [self.navigationItem setTitleView:[MasterViewController createLabelWithName: @"Main Menu" big:NO]];
     
-    self.tableView.backgroundColor = [UIColor blackColor];
+    self.tableView.backgroundColor = [Constants black];
     self.tableView.sectionIndexColor = [Constants gold];
     self.tableView.sectionIndexBackgroundColor = [Constants gold];
     self.tableView.sectionIndexTrackingBackgroundColor = [Constants gold];
-    self.tableView.separatorColor = [UIColor blackColor];
+    self.tableView.separatorColor = [Constants black];
     self.usr = [User load];
 
     if ([MasterViewController hasInterwebs]) {
@@ -146,7 +146,7 @@ static double hMult, wMult;
 }
 +(UILabel *)createLabelWithName: (NSString *) name big:(BOOL) big{
     UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0*wMult, 0*hMult, 320*wMult, 30*hMult)];
-    titleLabel.textColor = [UIColor blackColor];;
+    titleLabel.textColor = [Constants black];;
     titleLabel.backgroundColor = [UIColor clearColor];
     titleLabel.text = [NSString stringWithString:name];
     titleLabel.textAlignment = NSTextAlignmentCenter;
@@ -177,14 +177,14 @@ static double hMult, wMult;
     if (indexPath.row==self.objects.count-1 && self.usr==nil) {
         if (x) [self performSegueWithIdentifier:@"showDetail" sender:self];
         else displayThingy = TRUE;
-    } else if ([object isEqualToString:@"Twitter Feed"] && self.tweets.count==0 && !x)
+    } else if ([object isEqualToString:@"Twitter"] && self.tweets.count==0 && !x)
         displayThingy = TRUE;
     else if ([object isEqualToString:@"Events"] && self.events.count==0 && !x)
         displayThingy = TRUE;
     else if ([object isEqualToString:@"Tutorials"] && self.tuts.count==0 && !x)
         displayThingy = TRUE;
     else {
-        if ([object isEqualToString:@"Twitter Feed"] && self.tweets.count==0)
+        if ([object isEqualToString:@"Twitter"] && self.tweets.count==0)
             self.tweets = [TwitterFeedHandler downloadTweets];
         else if ([object isEqualToString:@"Events"] && self.events.count==0)
             self.events = [UpcomingEventsHandler downloadEvents];
@@ -206,12 +206,12 @@ static double hMult, wMult;
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
     if (indexPath.row%2==1) {
         cell.backgroundColor=[Constants gold];
-        cell.textLabel.textColor = [UIColor blackColor];;
+        cell.textLabel.textColor = [Constants black];;
     } else {
-        cell.backgroundColor = [UIColor blackColor];;
+        cell.backgroundColor = [Constants black];;
         cell.textLabel.textColor=[Constants gold];
     }
-    cell.font = [Constants body:24];
+    cell.textLabel.font = [Constants body:24];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     NSDate *object = self.objects[indexPath.row];
     cell.textLabel.text = [object description];

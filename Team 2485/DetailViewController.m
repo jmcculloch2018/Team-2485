@@ -96,6 +96,7 @@ static NSString *CellIdentifier = @"CellIdentifier";
                 searchDisplayController.searchResultsDataSource = self;
                 searchBar.placeholder = @"e.g. 2485";
                 searchBar.delegate = self;
+                searchBar.keyboardAppearance = UIKeyboardAppearanceDark;
                 self.tableView.tableHeaderView = searchBar;
                 
                 [self.view addSubview:self.tableView];
@@ -180,7 +181,7 @@ static NSString *CellIdentifier = @"CellIdentifier";
 
 #pragma mark - Table View
 -(void)makeAboutUs {
-    self.view.backgroundColor = [UIColor blackColor];
+    self.view.backgroundColor = [Constants black];
     UILabel *lab = [[UILabel alloc] initWithFrame:CGRectMake(10*widthMultiplier(self), 30*heightMultiplier(self), 300*widthMultiplier(self), 450*heightMultiplier(self))];
     lab.numberOfLines = 20;
     lab.textColor = [Constants gold];
@@ -212,11 +213,11 @@ static NSString *CellIdentifier = @"CellIdentifier";
     tableView.delegate = self;
     tableView.dataSource = self;
     
-    tableView.backgroundColor = [UIColor blackColor];
+    tableView.backgroundColor = [Constants black];
     tableView.sectionIndexColor = [Constants gold];
     tableView.sectionIndexBackgroundColor = [Constants gold];
     tableView.sectionIndexTrackingBackgroundColor = [Constants gold];
-    tableView.separatorColor = [UIColor blackColor];
+    tableView.separatorColor = [Constants black];
     [self.navigationController setToolbarHidden:YES];
     
     return tableView;
@@ -226,7 +227,7 @@ static NSString *CellIdentifier = @"CellIdentifier";
 }
 
 
-/*                                                          |
+/**                                                         |
 ____________________________________________________________|                   |
      _______                                                                    |
     /       \                                                                   |
@@ -238,16 +239,20 @@ ____________________________________________________________|                   
    \         /               |        |                                         |
     \_______/                |/\/\/\/\|                                         |
  _______________________________________________________________________________|
- */
+ 
+ 
+ 
+ 
+ **/
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    BOOL x =[MasterViewController hasInterwebs];
+    BOOL displayThingy = FALSE;
     if ([NSStringFromClass([self.detailItem class]) isEqualToString:@"Team"]) {
-        id obj = [_resources objectAtIndex:indexPath.row];
-        if ([NSStringFromClass([obj class]) isEqualToString:@"Regional"]) {
-            if ([MasterViewController hasInterwebs]) [self selectRegForTeam: obj];
-            else [MasterViewController noInternet:self];
-        } else {
-            [self performSegueWithIdentifier:@"showTeam" sender:self];
-        }
+        if (x) {
+            id obj = [_resources objectAtIndex:indexPath.row];
+            if ([NSStringFromClass([obj class]) isEqualToString:@"Regional"]) [self selectRegForTeam: obj];
+            else [self performSegueWithIdentifier:@"showTeam" sender:self];
+        } else displayThingy = TRUE;
 
     } else if ([NSStringFromClass([self.detailItem class]) isEqualToString:@"ListOfMatches"]) {
         [self performSegueWithIdentifier:@"showMatch" sender:self];
@@ -274,11 +279,19 @@ ____________________________________________________________|                   
     } else if ([self.detailItem isEqualToString:@"Twitter"]) {
         [self performSegueWithIdentifier:@"showTwitter" sender:self];
     } else if ([self.detailItem isEqualToString:@"Rankings"]) {
-        [self performSegueWithIdentifier:@"showTeams" sender:self];
+        if (((MasterViewController *)self.parent).teams == nil || ((MasterViewController *)self.parent).regs == nil) {
+            if (x) {
+                ((MasterViewController *)self.parent).teams = [RankingsHandler downloadTopTeams];
+                ((MasterViewController *)self.parent).regs = [RankingsHandler downloadRegs];
+            } else displayThingy = TRUE;
+        }
+        if (!displayThingy) [self performSegueWithIdentifier:@"showTeams" sender:self];
     } else if ([self.detailItem isEqualToString:@"Teams"]) {
         self.theTeam = [_resources objectAtIndex:indexPath.row];
-        if ([NSStringFromClass([self.theTeam class]) isEqualToString:@"Team"])
-            [self performSegueWithIdentifier:@"showTeamReg" sender:self];
+        if ([NSStringFromClass([self.theTeam class]) isEqualToString:@"Team"]) {
+            if (x) [self performSegueWithIdentifier:@"showTeamReg" sender:self];
+            else displayThingy = TRUE;
+        }
     } else if ([self.detailItem isEqualToString:@"Events "]) {
         [self performSegueWithIdentifier:@"showRegional" sender:self];
     } else if ([self.detailItem isEqualToString:@"Team 2485 Sign In"]) {
@@ -346,6 +359,10 @@ ____________________________________________________________|                   
         NSURL *url = [NSURL URLWithString:myurl];
         [[UIApplication sharedApplication] openURL:url];
     }
+    
+    
+    if (displayThingy) [MasterViewController noInternet:self];
+
 }
 -(IBAction)movieEnded:(id)sender {}
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -362,25 +379,25 @@ ____________________________________________________________|                   
         cell.textLabel.text = [m description];
     }
     else cell.textLabel.text = [_resources[indexPath.row] description];
-    if (![NSStringFromClass([self.detailItem class]) isEqualToString:@"Team"]&&![NSStringFromClass([self.detailItem class]) isEqualToString:@"ListOfMatches"]&&[self.detailItem isEqualToString:@"Teams"]) {
-        if (indexPath.row%6==0) {
+    if (![NSStringFromClass([self.detailItem class]) isEqualToString:@"Team"]&&![NSStringFromClass([self.detailItem class]) isEqualToString:@"ListOfMatches"]&&([self.detailItem isEqualToString:@"Teams"] || [self.detailItem isEqualToString:@"Events "])) {
+        if ([NSStringFromClass([_resources[indexPath.row] class]) isEqualToString:@"__NSCFString"] ||[NSStringFromClass([_resources[indexPath.row] class]) isEqualToString:@"__NSCFConstantString"]) {
             cell.backgroundColor=[Constants gold];
-            cell.textLabel.textColor = [UIColor blackColor];;
+            cell.textLabel.textColor = [Constants black];;
         } else {
-            cell.backgroundColor = [UIColor blackColor];;
+            cell.backgroundColor = [Constants black];;
             cell.textLabel.textColor=[Constants gold];
         }
     } else {
         if (indexPath.row%2==1) {
             cell.backgroundColor=[Constants gold];
-            cell.textLabel.textColor = [UIColor blackColor];
+            cell.textLabel.textColor = [Constants black];
         } else {
-            cell.backgroundColor = [UIColor blackColor];
+            cell.backgroundColor = [Constants black];
             cell.textLabel.textColor=[Constants gold];
         }
     }
     cell.textLabel.textAlignment = NSTextAlignmentCenter;
-    cell.font = [Constants body:24];
+    cell.textLabel.font = [Constants body:24];
     
     return cell;
 }
@@ -392,6 +409,7 @@ ____________________________________________________________|                   
     tf.borderStyle = UITextBorderStyleRoundedRect;
     tf.font = [Constants body: widthMultiplier(self) *15];
     tf.autocorrectionType = UITextAutocorrectionTypeNo;
+    tf.keyboardAppearance = UIKeyboardAppearanceDark;
     tf.keyboardType = UIKeyboardTypeDefault;
     tf.returnKeyType = UIReturnKeyNext;
     tf.clearButtonMode = UITextFieldViewModeWhileEditing;
@@ -437,10 +455,11 @@ ____________________________________________________________|                   
     _tf4 = [self makeTextField: CGRectMake(135, 210, 170, 35)];
     _tf4.returnKeyType = UIReturnKeyDone;
     _tf4.placeholder = @"Enter Password";
+    _tf4.autocapitalizationType = UITextAutocapitalizationTypeNone;
     [self.view addSubview: _tf4];
     [self.navigationController setToolbarHidden:YES];
 
-    self.view.backgroundColor = [UIColor blackColor];
+    self.view.backgroundColor = [Constants black];
 }
 -(IBAction)submit:(id)sender {
     if ([_tf.text isEqualToString: @""] || [_tf2.text isEqualToString: @""] || [_tf3.text isEqualToString: @""] || [_tf4.text isEqualToString: @""])
