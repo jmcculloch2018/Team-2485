@@ -11,11 +11,11 @@
 
 @implementation RankingsHandler
 +(Team *)findTeam: (int) teamNum {
-    @try {
+    @try { 
         Team *team = [[Team alloc] init];
         team.number = teamNum;
         
-        NSURL *tutorialsUrl = [NSURL URLWithString:[NSString stringWithFormat:@"http://www.thebluealliance.com/api/v2/team/frc%i?X-TBA-App-Id=frc2485:app:v01", teamNum]];
+        NSURL *tutorialsUrl = [NSURL URLWithString:[NSString stringWithFormat:@"https://www.thebluealliance.com/api/v2/team/frc%i?X-TBA-App-Id=frc2485:app:v01", teamNum]];
         NSData *tutorialsHtmlData = [NSData dataWithContentsOfURL:tutorialsUrl];
         NSString *htmlData = [NSString stringWithUTF8String:[tutorialsHtmlData bytes]];
         
@@ -82,7 +82,7 @@
     
 }
 +(NSArray *)downloadRegsForTeam : (Team *) team {
-    return [[RankingsHandler regsFromString:[NSString stringWithFormat:@"http://www.thebluealliance.com/api/v2/team/frc%i/%i/events?X-TBA-App-Id=frc2485:app:v01", team.number, [Constants year]]] arrayByAddingObject:@"More Info"];
+    return [[RankingsHandler regsFromString:[NSString stringWithFormat:@"https://www.thebluealliance.com/api/v2/team/frc%i/%i/events?X-TBA-App-Id=frc2485:app:v01", team.number, [Constants year]]] arrayByAddingObject:@"More Info"];
 }
 +(ListOfMatches *) downloadMatchesForTeam: (Team *)theTeam regional: (Regional *) reg {
     ListOfMatches *ret = [[ListOfMatches alloc] init];
@@ -93,7 +93,7 @@
     
     NSURL *tutorialsUrl = [NSURL URLWithString:
                            [NSString stringWithFormat:
-                            @"http://www.thebluealliance.com/api/v2/team/frc%i/event/%@/matches?X-TBA-App-Id=frc2485:app:v01", ret.team.number, ret.reg.identifier ]];
+                            @"https://www.thebluealliance.com/api/v2/team/frc%i/event/%@/matches?X-TBA-App-Id=frc2485:app:v01", ret.team.number, ret.reg.identifier ]];
     NSData *tutorialsHtmlData = [NSData dataWithContentsOfURL:tutorialsUrl];
     NSString *htmlData = [NSString stringWithUTF8String:[tutorialsHtmlData bytes]];
     
@@ -150,7 +150,7 @@
 }
 +(NSArray *)downloadRegs {
     NSMutableArray * arr = [[RankingsHandler regsFromString:
-            [NSString stringWithFormat:@"http://www.thebluealliance.com/api/v2/events/%i?X-TBA-App-Id=frc2485:app:v01", [Constants year]]] mutableCopy];
+            [NSString stringWithFormat:@"https://www.thebluealliance.com/api/v2/events/%i?X-TBA-App-Id=frc2485:app:v01", [Constants year]]] mutableCopy];
     
     int prevWeek = 0;
     for (int i = (int)[arr count]-1; i>=0; i--) {

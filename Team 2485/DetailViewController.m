@@ -19,7 +19,7 @@ static NSString *CellIdentifier = @"CellIdentifier";
 @end
 
 @implementation DetailViewController
-
+@synthesize emailField;
 #pragma mark - General
 
 -(void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
@@ -104,7 +104,7 @@ static NSString *CellIdentifier = @"CellIdentifier";
                 self.resources = ((MasterViewController *)(((DetailViewController *) (self.parent)).parent)).regs;
                 self.tableView = [self makeTableView];
                 [self.view addSubview:self.tableView];
-            } else if ([self.detailItem isEqualToString:@"Team 2485 Sign In"]) {
+            } else if ([self.detailItem isEqualToString:@"Team 2485 Sign In"]) { // signed in before
                 [self.navigationItem setTitleView:[MasterViewController createLabelWithName: @"Sign In" big:NO]];
 
                 self.usr = ((DetailViewController *)self.parent).usr;
@@ -115,8 +115,9 @@ static NSString *CellIdentifier = @"CellIdentifier";
                 }
                 [self.tableView reloadData];
                     
-            } else if ([self.detailItem isEqualToString:@"About Us"])[self makeAboutUs];
-            else {
+			} else if ([self.detailItem isEqualToString:@"About Us"]) {
+				[self makeAboutUs];
+			} else { // not already signed in... idk why this works
                 [self makeSignIn];
             }
         }
@@ -343,15 +344,15 @@ ____________________________________________________________|                   
         switch (indexPath.row) {
             case 0:
                 //Open Website
-                myurl = @"http://robotics.francisparker.org/";
+                myurl = @"https://robotics.francisparker.org/";
                 break;
             case 1:
                 //Open FRC Website
-                myurl = @"http://www.usfirst.org/roboticsprograms/frc";
+                myurl = @"https://www.usfirst.org/roboticsprograms/frc";
                 break;
             case 2:
                 //Open Game Manual
-                myurl = @"http://www.usfirst.org/sites/default/files/uploadedFiles/Robotics_Programs/FRC/Game_and_Season__Info/2015/2015GameManual0130.pdf";
+                myurl = @"https://www.usfirst.org/sites/default/files/uploadedFiles/Robotics_Programs/FRC/Game_and_Season__Info/2015/2015GameManual0130.pdf";
                 break;
             default:
                 break;
@@ -431,93 +432,43 @@ ____________________________________________________________|                   
 }
 -(void)makeSignIn{
     _comps = [NSMutableArray array];
-    [self.view addSubview:[self makeLabelWithFrame:CGRectMake(25, 75, 150, 35) text:@"First Name:"]];
+    [self.view addSubview:[self makeLabelWithFrame:CGRectMake(25, 75, 150, 35) text:@"Email Address:"]];
     
-    _tf = [self makeTextField:CGRectMake(135, 75, 170, 35)];
-    _tf.placeholder = @"First Name";
-    [self.view addSubview:_tf];
-    
-    [self.view addSubview:[self makeLabelWithFrame:CGRectMake(25, 120, 150, 35) text:@"Last Name:"]];
-    
-    _tf2 = [self makeTextField: CGRectMake(135, 120, 170, 35)];
-    _tf2.placeholder = @"Last Name";
-    [self.view addSubview: _tf2];
-    
-    [self.view addSubview:[self makeLabelWithFrame:CGRectMake(25, 165, 150, 35) text:@"Grade:"]];
-    
-    _tf3 = [self makeTextField: CGRectMake(135, 165, 170, 35)];
-    _tf3.placeholder = @"e.g. 11";
-    _tf3.keyboardType = UIKeyboardTypeNumbersAndPunctuation;
-    [self.view addSubview: _tf3];
-    
-    [self.view addSubview:[self makeLabelWithFrame:CGRectMake(25, 210, 150, 35) text:@"Password:"]];
-    
-    _tf4 = [self makeTextField: CGRectMake(135, 210, 170, 35)];
-    _tf4.returnKeyType = UIReturnKeyDone;
-    _tf4.placeholder = @"Enter Password";
-    _tf4.autocapitalizationType = UITextAutocapitalizationTypeNone;
-    [self.view addSubview: _tf4];
+    emailField = [self makeTextField:CGRectMake(25, 125, 270, 35)];
+    emailField.placeholder = @"Email Address";
+	emailField.returnKeyType = UIReturnKeyDone;
+    [self.view addSubview:emailField];
+	
     [self.navigationController setToolbarHidden:YES];
 
     self.view.backgroundColor = [Constants black];
 }
 -(IBAction)submit:(id)sender {
-    if ([_tf.text isEqualToString: @""] || [_tf2.text isEqualToString: @""] || [_tf3.text isEqualToString: @""] || [_tf4.text isEqualToString: @""])
-        [[[UIAlertView alloc] initWithTitle: @"Fields left blank"
-                                    message:@"Please complete all fields"
+	if ([emailField.text isEqualToString: @""]) {
+        [[[UIAlertView alloc] initWithTitle: @"Email field left blank"
+                                    message:@"Please enter your email"
                                    delegate:self
                           cancelButtonTitle:@"OK"
                           otherButtonTitles: nil] show];
-    else if ([_tf4.text isEqualToString:[Constants password]]) {
-        @try {
-            User *usr = [[User alloc] init];
-            usr.first = _tf.text;
-            usr.last = _tf2.text;
-            usr.grade = _tf3.text.intValue;
-            NSCharacterSet *alphaNums = [NSCharacterSet letterCharacterSet];
-            NSCharacterSet *inStringSet = [NSCharacterSet characterSetWithCharactersInString:usr.first];
-            BOOL valid = [alphaNums isSupersetOfSet:inStringSet];
-            NSCharacterSet *inStringSet2 = [NSCharacterSet characterSetWithCharactersInString:usr.last];
-            BOOL valid2 = [alphaNums isSupersetOfSet:inStringSet2];
-            if (!valid||!valid2) // Not numeric
-                [[[UIAlertView alloc] initWithTitle: @"Invalid name"
-                                            message:@"Name may not contian numbers"
-                                           delegate:self
-                                  cancelButtonTitle:@"OK"
-                                  otherButtonTitles: nil] show];
-            else {
-                [usr createUser];
-                [usr save];
-                ((MasterViewController *)self.parent).usr = usr;
-                ((MasterViewController *)self.parent).loggedIn = [usr isSignedIn];
-                ((MasterViewController *)self.parent).hours = [usr getHours];
-                [_tf4 resignFirstResponder];
-                for (UIView *v in _comps) {
-                    [v removeFromSuperview];
-                }
-                self.detailItem = @"Team 2485 Sign In";
-                [self configureView];
-            }
-            
-        } @catch (NSException *exception) {
-            [[[UIAlertView alloc] initWithTitle: @"Not a number"
-                                        message:@"Grade must be an integer"
-                                       delegate:self
-                              cancelButtonTitle:@"OK"
-                              otherButtonTitles: nil] show];
-        }
-    } else
-        [[[UIAlertView alloc] initWithTitle: @"Incorrect Password"
-                                    message:@"Try again"
-                                   delegate:self
-                          cancelButtonTitle:@"OK"
-                          otherButtonTitles: nil] show];
+	} else {
+		User *usr = [[User alloc] init];
+		usr.email = emailField.text;
+		[usr save];
+		((MasterViewController *)self.parent).usr = usr;
+		((MasterViewController *)self.parent).loggedIn = [usr isSignedIn];
+		((MasterViewController *)self.parent).hours = [usr getHours];
+		for (UIView *v in _comps) {
+			[v removeFromSuperview];
+		}
+		self.detailItem = @"Team 2485 Sign In";
+		[self configureView];
+		
+    }
 }
+
+
 -(BOOL)textFieldShouldReturn:(UITextField *)textField {
-    if (textField.frame.origin.y == _tf.frame.origin.y) [_tf2 becomeFirstResponder];
-    else if (textField.frame.origin.y == _tf2.frame.origin.y) [_tf3 becomeFirstResponder];
-    else if (textField.frame.origin.y == _tf3.frame.origin.y) [_tf4 becomeFirstResponder];
-    else [self submit:nil];
+    [self submit:nil];
     
     return YES;
 }

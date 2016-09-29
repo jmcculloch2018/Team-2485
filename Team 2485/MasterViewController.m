@@ -18,8 +18,7 @@ static double hMult, wMult;
     [self viewDidLoad];
 }
 +(BOOL)hasInterwebs {
-    NSString *URLString = [NSString stringWithContentsOfURL:[NSURL URLWithString:@"http://www.google.com"]];
-    return URLString != NULL;
+    return TRUE;
 }
 - (void)awakeFromNib {
     [super awakeFromNib];

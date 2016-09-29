@@ -10,10 +10,8 @@
 #import <CoreLocation/CoreLocation.h>
 
 @interface User : NSObject
-@property NSString *first, *last;
-@property int grade;
+@property NSString *email;
 -(BOOL)toggleSign;
--(void)createUser;
 +(BOOL)isOnCampus: (CLLocation *)loc;
 -(BOOL)isSignedIn;
 -(void)save;

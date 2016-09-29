@@ -6,6 +6,8 @@
 //  Copyright (c) 2015 Jeremy McCulloch. All rights reserved.
 //
 
+#define VERSION_STRING @"1.1"
+
 @interface Constants : NSObject
 +(UIColor *) gold;
 +(UIColor *) black;

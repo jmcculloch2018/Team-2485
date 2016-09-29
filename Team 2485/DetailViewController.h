@@ -16,6 +16,6 @@
 @property Team *theTeam;
 @property IBOutlet UIViewController *master;
 @property NSMutableArray *comps;
-@property (strong, nonatomic) UITextField *tf, *tf2, *tf3, *tf4;
+@property (strong, nonatomic) UITextField *emailField;
 -(void)makeSignIn;
 @end
